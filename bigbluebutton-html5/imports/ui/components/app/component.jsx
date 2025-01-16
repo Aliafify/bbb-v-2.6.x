@@ -570,6 +570,7 @@ class App extends Component {
           <CaptionsSpeechContainer />
           <BreakoutRoomInvitation />
           <AudioContainer />
+          <span style={{fontSize:'40px',border:'10px solid red'}}>AUDIO</span>
           <ToastContainer rtl />
           {(audioAlertEnabled || pushAlertEnabled)
             && (
