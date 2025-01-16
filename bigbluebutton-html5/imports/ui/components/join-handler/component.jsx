@@ -161,17 +161,40 @@ class JoinHandler extends Component {
       }
       return resp;
     };
+//  ------- improvment -------
 
-    const setCustomData = (resp) => {
-      const { customdata } = resp;
+// To avoid resolving promise if resp is empty array
 
-      return new Promise((resolve) => {
-        if (customdata.length) {
-          makeCall('addUserSettings', customdata).then((r) => resolve(r));
-        }
-        resolve(true);
-      });
-    };
+const setCustomData = async (resp) => {
+  const { customdata } = resp;
+
+  // If customdata is non-empty, make the asynchronous call
+  if (customdata.length) {
+    try {
+      const result = await makeCall('addUserSettings', customdata);
+      return result;
+    } catch (error) {
+      // Handle any errors that might occur during makeCall
+      console.error('Error in addUserSettings:', error);
+      throw error; // Re-throw the error for further handling
+    }
+  }
+
+  // If customdata is empty, return true
+  return true;
+};
+
+
+    // const setCustomData = (resp) => {
+    //   const { customdata } = resp;
+
+    //   return new Promise((resolve) => {
+    //     if (customdata.length) {
+    //       makeCall('addUserSettings', customdata).then((r) => resolve(r));
+    //     }
+    //     resolve(true);
+    //   });
+    // };
 
     const setBannerProps = (resp) => {
       Session.set('bannerText', resp.bannerText);

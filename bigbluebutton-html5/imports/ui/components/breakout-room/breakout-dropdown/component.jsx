@@ -47,6 +47,7 @@ class BreakoutDropdown extends PureComponent {
         dataTest: 'openBreakoutTimeManager',
         label: intl.formatMessage(intlMessages.manageDuration),
         onClick: () => {
+          alert('Breakout Time Maneger')
           openBreakoutTimeManager();
         }
       }
@@ -58,6 +59,7 @@ class BreakoutDropdown extends PureComponent {
         dataTest: 'openUpdateBreakoutUsersModal',
         label: intl.formatMessage(intlMessages.manageUsers),
         onClick: () => {
+          alert('updateBreakoutUsers')
           mountModal(
             <CreateBreakoutRoomModal isUpdate />
           );
@@ -73,6 +75,7 @@ class BreakoutDropdown extends PureComponent {
           label: intl.formatMessage(intlMessages.destroy),
           disabled: !isMeteorConnected,
           onClick: () => {
+            alert('endAllBreakouts')
             endAllBreakouts();
           }
         }

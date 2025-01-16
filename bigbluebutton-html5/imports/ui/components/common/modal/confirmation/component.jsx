@@ -37,6 +37,7 @@ class ConfirmationModal extends Component {
   }
 
   render() {
+    alert('ConfirmationModal')
     const {
       intl,
       mountModal,
