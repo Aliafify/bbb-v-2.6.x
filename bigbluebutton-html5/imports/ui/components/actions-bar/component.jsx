@@ -44,7 +44,8 @@ class ActionsBar extends PureComponent {
 
     const shouldShowOptionsButton = (isPresentationEnabled() && isThereCurrentPresentation) 
                                     || isSharingVideo || hasScreenshare || isSharedNotesPinned;
-    return (
+    alert('Test')
+                                    return (
       <Styled.ActionsBar
         style={
           {
@@ -82,6 +83,9 @@ class ActionsBar extends PureComponent {
             )
             : null }
         </Styled.Left>
+        <span>
+          Hello Every One
+        </span>
         <Styled.Center>
           <AudioControlsContainer />
           {enableVideo
