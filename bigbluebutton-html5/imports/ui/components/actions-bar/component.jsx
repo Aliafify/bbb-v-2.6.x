@@ -120,7 +120,13 @@ class ActionsBar extends PureComponent {
               }
               />
             ) : null}
-            <LeaveMeetingButton/>
+            <LeaveMeetingButton
+            {...{
+              isMeteorConnected,
+              intl
+            
+            }}
+            />
         </Styled.Right>
       </Styled.ActionsBar>
     );
