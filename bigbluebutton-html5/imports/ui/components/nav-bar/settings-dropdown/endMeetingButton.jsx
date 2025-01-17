@@ -60,7 +60,7 @@ class LeaveMeetingButton extends PureComponent {
         style={{ backgroundColor: colorDanger, color: colorWhite }}
         data-test="leaveMeetingButton"
       >
-        {intl.formatMessage(intlMessages.leaveSessionLabel)}
+Leave Meeting
       </Styled.LeaveButton>
     );
   }
