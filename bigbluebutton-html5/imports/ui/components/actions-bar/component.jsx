@@ -10,9 +10,29 @@ import JoinVideoOptionsContainer from '../video-provider/video-button/container'
 import PresentationOptionsContainer from './presentation-options/component';
 import RaiseHandDropdownContainer from './raise-hand/container';
 import { isPresentationEnabled } from '/imports/ui/services/features';
-import LeaveMeetingButton from "../nav-bar/settings-dropdown/endMeetingButton";
+// import LeaveMeetingButton from "../nav-bar/settings-dropdown/endMeetingButton";
 
 class ActionsBar extends PureComponent {
+  
+  constructor(props) {
+    super(props);
+
+    this.LOGOUT_CODE = '680'; // Unique code to indicate user left
+
+    this.handleLeaveSession = this.handleLeaveSession.bind(this);
+  }
+
+    handleLeaveSession() {
+      const { onLeaveSession } = this.props;
+  
+      makeCall('userLeftMeeting');
+      Session.set('codeError', this.LOGOUT_CODE);
+  
+      // if (onLeaveSession) {
+      //   onLeaveSession();
+      // }
+    }
+  
   render() {
     const {
       amIPresenter,
@@ -82,6 +102,10 @@ class ActionsBar extends PureComponent {
               <AudioCaptionsButtonContainer />
             )
             : null }
+
+            <button
+             onClick={this.handleLeaveSession}
+            >Leave</button>
         </Styled.Left>
         
         <Styled.Center>
@@ -120,10 +144,6 @@ class ActionsBar extends PureComponent {
               }
               />
             ) : null}
-            <LeaveMeetingButton
-            intl={intl}
-            isMeteorConnected={isMeteorConnected}
-            />
         </Styled.Right>
       </Styled.ActionsBar>
     );
