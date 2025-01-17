@@ -69,4 +69,4 @@ class LeaveMeetingButton extends PureComponent {
 LeaveMeetingButton.propTypes = propTypes;
 LeaveMeetingButton.defaultProps = defaultProps;
 
-export default injectIntl(withModalMounter(LeaveMeetingButton));
+export default LeaveMeetingButton;
