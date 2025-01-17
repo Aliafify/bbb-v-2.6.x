@@ -10,6 +10,7 @@ import JoinVideoOptionsContainer from '../video-provider/video-button/container'
 import PresentationOptionsContainer from './presentation-options/component';
 import RaiseHandDropdownContainer from './raise-hand/container';
 import { isPresentationEnabled } from '/imports/ui/services/features';
+import LeaveMeetingButton from "../nav-bar/settings-dropdown/endMeetingButton";
 
 class ActionsBar extends PureComponent {
   render() {
@@ -44,7 +45,6 @@ class ActionsBar extends PureComponent {
 
     const shouldShowOptionsButton = (isPresentationEnabled() && isThereCurrentPresentation) 
                                     || isSharingVideo || hasScreenshare || isSharedNotesPinned;
-    alert('Test')
                                     return (
       <Styled.ActionsBar
         style={
@@ -83,9 +83,7 @@ class ActionsBar extends PureComponent {
             )
             : null }
         </Styled.Left>
-        <span>
-          Hello Every One
-        </span>
+        
         <Styled.Center>
           <AudioControlsContainer />
           {enableVideo
@@ -122,6 +120,7 @@ class ActionsBar extends PureComponent {
               }
               />
             ) : null}
+            <LeaveMeetingButton/>
         </Styled.Right>
       </Styled.ActionsBar>
     );
