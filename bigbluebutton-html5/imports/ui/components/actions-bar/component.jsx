@@ -2,6 +2,8 @@ import React, { PureComponent } from 'react';
 import CaptionsButtonContainer from '/imports/ui/components/captions/button/container';
 import deviceInfo from '/imports/utils/deviceInfo';
 import Styled from './styles';
+import { makeCall } from '/imports/ui/services/api';
+
 import ActionsDropdown from './actions-dropdown/container';
 import AudioCaptionsButtonContainer from '/imports/ui/components/audio/captions/button/container';
 import ScreenshareButtonContainer from '/imports/ui/components/actions-bar/screenshare/container';
