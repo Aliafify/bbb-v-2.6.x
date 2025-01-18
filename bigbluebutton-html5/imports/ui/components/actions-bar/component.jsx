@@ -13,6 +13,7 @@ import PresentationOptionsContainer from './presentation-options/component';
 import RaiseHandDropdownContainer from './raise-hand/container';
 import { isPresentationEnabled } from '/imports/ui/services/features';
 // import LeaveMeetingButton from "../nav-bar/settings-dropdown/endMeetingButton";
+import { IoLogOutOutline } from "react-icons/io5";
 
 class ActionsBar extends PureComponent {
   
@@ -105,9 +106,11 @@ class ActionsBar extends PureComponent {
             )
             : null }
 
-            <button
+            <IoLogOutOutline
              onClick={this.handleLeaveSession}
-            >Leave</button>
+             color={'red'}
+             size={'35px'}
+            />
         </Styled.Left>
         
         <Styled.Center>
