@@ -109,7 +109,7 @@ class ActionsBar extends PureComponent {
             <IoLogOutOutline
              onClick={this.handleLeaveSession}
              color={'red'}
-             size={'35px'}
+             size={'44px'}
             />
         </Styled.Left>
         
